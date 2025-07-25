@@ -80,9 +80,10 @@ process.on('unhandledRejection', (reason, promise) => {
 // Start checking
 checkButton();
 
-// 🌐 Minimal HTTP server for Render health check
+// 🌐 Minimal HTTP server for Render health check and UptimeRobot ping logging
 const serverPort = process.env.PORT || 3000;
 http.createServer((req, res) => {
+    console.log(`🌐 Received ping at ${new Date().toISOString()} from ${req.socket.remoteAddress}`);
     res.writeHead(200);
     res.end('OK');
 }).listen(serverPort, () => {
