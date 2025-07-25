@@ -1,1 +1,1 @@
-# auto-notify-goethe-bd
+# Auto Notify Goethe-BD
